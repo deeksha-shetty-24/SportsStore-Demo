@@ -1,0 +1,14 @@
+<div class="navbar fixed-top navbar-dark  bg-adminNavbar text-white">
+    <a class="navbar-brand" routerLink="/">Sports Store</a>
+</div>
+
+<div class="row container-fluid">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+        <button class="btn btn-outline-primary btn-block" routerLink="/admin/main/products">Products</button>
+        <button class="btn btn-outline-primary btn-block" routerLink="/admin/main/orders">Orders</button>
+        <button class="btn btn-outline-warning btn-block" (click)="logout()">Logout</button>
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+        <router-outlet></router-outlet>
+    </div>
+</div>

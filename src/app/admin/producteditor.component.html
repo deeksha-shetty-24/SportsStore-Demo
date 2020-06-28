@@ -1,0 +1,33 @@
+<div class="navbar fixed-top navbar-dark  bg-productEditorNavbar text-white">
+    <a class="navbar-brand" routerLink="/">Sports Store-Edit</a>
+</div>
+<div class="bg-primary p-1" [class.bg-warning]="editing">
+    <h5>
+        {{editing?"Edit":"Create"}}Product
+    </h5>
+</div>
+
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+    <div class="form-group">
+        <label>Product Name</label>
+        <input class="form-control" name="productName" [(ngModel)]="product.productName" />
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <input class="form-control" name="category" [(ngModel)]="product.category" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input class="form-control" name="description" [(ngModel)]="product.description" />
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input class="form-control" name="price" [(ngModel)]="product.price" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary" [class.btn-warning]="editing">
+        {{editing?"Update":"Save"}}
+    </button>
+    <button type="reset" class="btn btn-secondary ml-2" routerLink="/admin/main/products">
+        Cancel
+    </button>
+</form>
